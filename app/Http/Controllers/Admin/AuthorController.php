@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Author;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view('admin.author.index');
+        return view('admin.author.index', [
+            'title' => 'Data Penulis',
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.author.create', [
+            'title' => 'Tambah Penulis',
+        ]);
     }
 
     /**
@@ -35,7 +40,14 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3'
+        ]);
+
+        Author::create($request->only('name'));
+
+        return redirect()->route('admin.author.index')
+                    ->with('success', 'Data penulis berhasil ditambahkan');
     }
 
     /**
@@ -55,9 +67,12 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Author $author)
     {
-        //
+        return view('admin.author.edit', [
+            'title' => 'Edit Penulis',
+            'author' => $author,
+        ]);
     }
 
     /**
@@ -67,9 +82,16 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Author $author)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3'
+        ]);
+
+        $author->update($request->only('name'));
+
+        return redirect()->route('admin.author.index')
+                    ->with('info', 'Data penulis berhasil diupdate');
     }
 
     /**
@@ -78,8 +100,11 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('admin.author.index')
+                    ->with('danger', 'Data penulis berhasil dihapus');
     }
 }
