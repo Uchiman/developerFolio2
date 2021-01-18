@@ -31,7 +31,7 @@ class DataController extends Controller
                     ->editColumn('cover', function(Book $model) {
                         return '<img src="'. $model->getCover() .'" height=150px >';
                     })
-                    ->addColumn('action', 'admin.author.action')
+                    ->addColumn('action', 'admin.book.action')
                     ->addIndexColumn()
                     ->rawColumns(['cover', 'action'])
                     ->toJson();

@@ -27,7 +27,7 @@
                 </li>
                 <li class="nav-header">MAIN NAVIGATION</li>
                 <li class="nav-item">
-                    <a href="/admin/author" class="nav-link">
+                    <a href="{{ route('admin.author.index')}}" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Penulis
@@ -35,15 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            User
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.book.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Buku
@@ -52,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Buku Sedang Dipinjam
                         </p>

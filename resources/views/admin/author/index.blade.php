@@ -29,11 +29,17 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsplugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 @endpush
 
 @push('scripts')
-<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.notify.min.js') }}"></script>
+    <!-- DataTables -->
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 @include('admin.templates.partials.alerts')
 <script>
     $(function () {
