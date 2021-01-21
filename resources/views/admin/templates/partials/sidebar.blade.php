@@ -43,8 +43,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
+                    <a href="{{ route('admin.borrow.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
                         <p>
                             Buku Sedang Dipinjam
                         </p>

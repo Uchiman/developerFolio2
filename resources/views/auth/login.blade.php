@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">email</i>
-                    <input type="email" class="validate @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
-                    <label for="">Email Address</label>
+                    <input id="email" type="email" class="validate @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
+                    <label for="email">Email Address</label>
                     @error('email')
                         <span class="helper-text" data-error="{{ $message }}"></span>
                     @enderror
@@ -17,8 +17,8 @@
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
-                    <input type="password" class="@error('password') invalid @enderror" name="password" value="">
-                    <label for="">Password</label>
+                    <input id="password" type="password" class="@error('password') invalid @enderror" name="password" value="">
+                    <label for="password" >Password</label>
                     @error('password')
                         <span class="helper-text" data-error="{{ $message }}"></span>
                     @enderror

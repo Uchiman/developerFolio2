@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Frontend\\BookController@index')->name('homepage');
+Route::get('/book/{id}', 'Frontend\\BookController@show')->name('book.show');
+Route::post('/book/{id}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->middleware('auth');
 
 Auth::routes(['verify'=> true]);
 
