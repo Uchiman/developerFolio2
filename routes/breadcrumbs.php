@@ -50,3 +50,15 @@ Breadcrumbs::for('admin.borrow.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Peminjaman', route('admin.borrow.index'));
 });
+
+// Report Top Book
+Breadcrumbs::for('admin.report.top-book', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Buku Terbaik', route('admin.report.top-book'));
+});
+
+// Report Top User
+Breadcrumbs::for('admin.report.top-user', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('User Terbaik', route('admin.report.top-user'));
+});
